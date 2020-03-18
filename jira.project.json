@@ -1,0 +1,98 @@
+{
+    "projectName": "Jirame",
+    "features": [
+        "issues"
+    ],
+    "entities": [
+        {
+            "nameSingular": "Project",
+            "namePlural": "Projects",
+            "keyField": "projectKey",
+            "nameField": "name",
+            "fields": [
+                {
+                    "key": "projectKey",
+                    "display": "Project Key",
+                    "type": "string",
+                    "required": true,
+                    "mockValueProvider": "random-choice:DEV,IT,SUPPORT,DEMO"
+                },
+                {
+                    "key": "name",
+                    "display": "Name",
+                    "type": "string",
+                    "required": true,
+                    "mockValueProvider": "random-choice:Development,Information Technology, Support,Demo Site"
+                }
+            ],
+            "feature": "issues"
+        },
+        {
+            "nameSingular": "Issue",
+            "namePlural": "Issues",
+            "keyField": "issueKey",
+            "nameField": "summary",
+            "fields": [
+                {
+                    "key": "issueKey",
+                    "display": "Issue Key",
+                    "type": "string",
+                    "required": true,
+                    "mockValueProvider": "random-choice:DEV,IT,SUPPORT,DEMO;text:-;random-number:1000-9999"
+                },
+                {
+                    "key": "project",
+                    "display": "project",
+                    "type": "Project",
+                    "required": true
+                },
+                {
+                    "key": "summary",
+                    "display": "Summary",
+                    "type": "string",
+                    "required": true,
+                    "mockValueProvider": "random-choice:Emailed reports not received;Unusual login activity;What;What2;What3"
+                },
+                {
+                    "key": "description",
+                    "display": "Description",
+                    "type": "string"
+                }
+            ],
+            "feature": "issues"
+        },
+        {
+            "nameSingular": "Label",
+            "namePlural": "Labels",
+            "keyField": "name",
+            "nameField": "name",
+            "fields": [
+                {
+                    "key": "name",
+                    "display": "Name",
+                    "type": "string",
+                    "required": true,
+                    "mockValueProvider": "random-choice:show-stopper;needs-review"
+                }
+            ],
+            "feature": "issues"
+        }
+    ],
+    "screens": [
+        {
+            "name": "issue-view-full",
+            "layout": {
+                "column": [
+                    {
+                        "fields": [
+                            {
+                                "key": "summary"
+                            }
+                        ]
+                    },
+                    {}
+                ]
+            }
+        }
+    ]
+}
